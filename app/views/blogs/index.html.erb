@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blogs</h1>
+
+<% @blogs.each do |blog| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h4 class="card-title"><%= blog.title %></h4>
+          <p class="card-text"><%= blog.content %></p>
+          <%= link_to 'Show', blog, class: "card-link" %>
+          <%= link_to 'Edit', edit_blog_path(blog), class: "card-link" %>
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
+        </div>
+      </div>
+<% end %>
+
+<%= link_to 'New Blog', new_blog_path, class: "btn btn-success", style: "color: #FFFFFF;" %>
